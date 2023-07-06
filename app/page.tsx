@@ -1,7 +1,8 @@
 'use client'
 
+import RucList from '@/components/RucList'
 import SearchInput from '@/components/SearchInput'
-import { Ruc } from '@/types'
+import { Ruc, Search } from '@/types'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -15,10 +16,11 @@ export const listadoRuc: Ruc[] = [
 ]
 
 export default function Home() {
-  const [listadoFiltrado, setListadoFiltrado] = useState(listadoRuc)
+  const [listadoFiltrado, setListadoFiltrado] = useState<Ruc[]>([])
+  const [mensaje, setMensaje] = useState<string>('')
 
   return (
-    <main className='flex min-h-screen flex-col items-center px-24'>
+    <main className='flex min-h-screen flex-col items-center px-5 sm:px-24'>
       <Image
         src='/escudo1.png'
         width={80}
@@ -28,16 +30,12 @@ export default function Home() {
       <h1 className='border shadow rounded px-2 bg-white mb-5 text-center'>
         RUC 🪪
       </h1>
-      <SearchInput setListado={setListadoFiltrado} />
+      <SearchInput setMensaje={setMensaje} setListado={setListadoFiltrado} />
       {listadoFiltrado.length > 0 ? (
-        <ul>
-          {listadoFiltrado.map((item, idx) => (
-            <li key={idx}>{`${item.ci}-${item.dv} ---> ${item.name}`}</li>
-          ))}
-        </ul>
+        <RucList listado={listadoFiltrado} />
       ) : (
         <span className='animate-pulse'>
-          No se encontraron coincidencias...
+          {mensaje.length > 0 ? mensaje : ''}
         </span>
       )}
     </main>
