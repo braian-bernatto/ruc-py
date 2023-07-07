@@ -13,7 +13,7 @@ const RucList: React.FC<Props> = ({ listado }) => {
         <thead>
           <tr className='shadow'>
             <th>RUC</th>
-            <th>Razón Social</th>
+            <th>RAZÓN SOCIAL</th>
           </tr>
         </thead>
         <tbody>

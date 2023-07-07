@@ -32,10 +32,11 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
       | React.KeyboardEvent<HTMLTextAreaElement>
   ) => {
     e.preventDefault()
-
     const parametro = multiple
       ? buscar.toString().replace(/\s/g, '').split(',')
       : buscar.toString().replace(/\s/g, '')
+
+    console.log(parametro.toString())
 
     const newListado = listadoRuc.filter(ruc => {
       const fullText = `${ruc.ci}-${ruc.dv} ${ruc.name} ${ruc.ci}`
