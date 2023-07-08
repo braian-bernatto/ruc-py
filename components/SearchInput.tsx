@@ -1,4 +1,3 @@
-import { listadoRuc } from '@/app/page'
 import { Ruc, Search } from '@/types'
 import React, { useState } from 'react'
 
@@ -7,16 +6,27 @@ interface Props {
   setListado: (datos: Ruc[]) => void
 }
 
+const isNumeric = (str: any) => {
+  str = str.replace(/\s/g, '').replaceAll(',', '').replaceAll('-', '')
+
+  return (
+    (typeof str === 'number' ||
+      (typeof str === 'string' && str.trim() !== '')) &&
+    !isNaN(str as number)
+  )
+}
+
 const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
   const [buscar, setBuscar] = useState<Search>('')
-  const [multiple, setMultiple] = useState<boolean>(false)
+  const [isNumber, setIsNumber] = useState<boolean>(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setBuscar(e.currentTarget.value)
-    if (e.currentTarget.value.includes(',')) {
-      setMultiple(true)
+
+    if (isNumeric(e.currentTarget.value)) {
+      setIsNumber(true)
     } else {
-      setMultiple(false)
+      setIsNumber(false)
     }
   }
 
@@ -26,41 +36,44 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
     }
   }
 
-  const handleSubmit = (
+  const handleSubmit = async (
     e:
       | React.FormEvent<HTMLFormElement>
       | React.KeyboardEvent<HTMLTextAreaElement>
   ) => {
     e.preventDefault()
-    const parametro = multiple
-      ? buscar.toString().replace(/\s/g, '').split(',')
-      : buscar.toString().replace(/\s/g, '')
 
-    console.log(parametro.toString())
+    if (isNumeric(buscar)) {
+      setIsNumber(true)
+    } else {
+      setIsNumber(false)
+    }
 
-    const newListado = listadoRuc.filter(ruc => {
-      const fullText = `${ruc.ci}-${ruc.dv} ${ruc.name} ${ruc.ci}`
-      let exists = false
+    const parametro = isNumber
+      ? buscar.toString().replace(/\s/g, ';')
+      : buscar.toString().replace(/\s+/g, ' ').trim()
 
-      if (Array.isArray(parametro)) {
-        parametro.forEach(element => {
-          if (element === '') return
-          if (fullText.toString().includes(element)) exists = true
-        })
+    const getRuc = async () => {
+      const url = new URL(
+        isNumber
+          ? `${process.env.API_ENDPOINT}/ruc/${parametro}`
+          : `${process.env.API_ENDPOINT}/ruc/razon-social/${parametro}`
+      )
 
-        return exists
-      }
+      return await fetch(url)
+        .then(res => res.json())
+        .catch(e => console.log(e))
+    }
 
-      return fullText.toString().includes(parametro.toString())
-    })
+    const listadoRuc = await getRuc()
 
-    if (newListado.length < 1) {
+    if (listadoRuc.length < 1) {
       setMensaje('No se encontraron coincidencias...')
       setTimeout(() => {
         setMensaje('')
       }, 5000)
     }
-    setListado(newListado)
+    setListado(listadoRuc)
   }
 
   return (

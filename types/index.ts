@@ -1,7 +1,10 @@
 export interface Ruc {
-  ci: number
-  name: string
-  dv: number
+  ruc_id: number
+  ruc_nombre: string
+  ruc_ci: number
+  ruc_dv: number
+  ruc_estado: string
+  ruc_adicional: string
 }
 
 export type Search = number | string

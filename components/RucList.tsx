@@ -19,8 +19,8 @@ const RucList: React.FC<Props> = ({ listado }) => {
         <tbody>
           {listado.map((dato, idx) => (
             <tr key={idx}>
-              <td>{`${dato.ci}-${dato.dv}`}</td>
-              <td>{dato.name}</td>
+              <td>{`${dato.ruc_ci}-${dato.ruc_dv}`}</td>
+              <td>{dato.ruc_nombre}</td>
             </tr>
           ))}
         </tbody>
