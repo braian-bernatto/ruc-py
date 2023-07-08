@@ -7,8 +7,8 @@ interface Props {
 
 const RucList: React.FC<Props> = ({ listado }) => {
   return (
-    <div className='overflow-x-auto bg-white rounded shadow max-w-2xl w-full'>
-      <table className='table table-zebra'>
+    <div className='overflow-x-auto bg-white rounded shadow max-w-2xl w-full max-h-[400px] sm:max-h-[700px]'>
+      <table className='table table-zebra table-pin-rows text-xs'>
         {/* head */}
         <thead>
           <tr className='shadow'>
@@ -19,7 +19,7 @@ const RucList: React.FC<Props> = ({ listado }) => {
         <tbody>
           {listado.map((dato, idx) => (
             <tr key={idx}>
-              <td>{`${dato.ruc_ci}-${dato.ruc_dv}`}</td>
+              <td>{`${dato.ruc_numero}-${dato.ruc_dv}`}</td>
               <td>{dato.ruc_nombre}</td>
             </tr>
           ))}

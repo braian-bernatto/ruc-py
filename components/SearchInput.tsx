@@ -50,8 +50,8 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
     }
 
     const parametro = isNumber
-      ? buscar.toString().replace(/\s/g, ';')
-      : buscar.toString().replace(/\s+/g, ' ').trim()
+      ? buscar.toString().replace(/\s/g, ';') //reemplaza todos los espacios en blanco por un punto y coma dejando "23424;23424"
+      : buscar.toString().replace(/\s+/g, ' ').trim() //quita todos los espacios extras entre palabras y con trim los espacios a los costados
 
     const getRuc = async () => {
       const url = new URL(
@@ -82,7 +82,7 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
       className='flex flex-wrap items-center justify-center gap-2 mb-4 w-full'
     >
       <textarea
-        className='textarea textarea-xs textarea-bordered s:w-full w-[300px]'
+        className='textarea textarea-xs textarea-bordered w-full sm:w-[400px]'
         placeholder='Ingresa el listado de ruc separados por comas'
         onChange={e => handleInputChange(e)}
         value={buscar}
@@ -90,10 +90,10 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
       ></textarea>
 
       <button
-        className={`bg-slate-500 text-white rounded shadow-md px-2 py-1 flex-none`}
+        className={`bg-slate-500 text-white rounded shadow-md px-2 py-2 flex justify-center items-center gap-2 transition-all hover:scale-105`}
         type='submit'
       >
-        Buscar{' '}
+        Buscar
         <span
           className={`transition ${
             typeof buscar === 'string' && buscar!.length > 0
@@ -101,7 +101,20 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
               : ''
           }`}
         >
-          🔎
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            strokeWidth={1.5}
+            stroke='currentColor'
+            className='w-6 h-6'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
+            />
+          </svg>
         </span>
       </button>
     </form>

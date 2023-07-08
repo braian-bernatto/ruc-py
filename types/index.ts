@@ -1,5 +1,5 @@
 export interface Ruc {
-  ruc_id: number
+  ruc_numero: number
   ruc_nombre: string
   ruc_ci: number
   ruc_dv: number
