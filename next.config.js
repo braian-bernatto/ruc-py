@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    API_ENDPOINT: 'http://localhost:4000'
+    API_ENDPOINT: 'https://ruc-api.bernatto.xyz'
   }
 }
 
