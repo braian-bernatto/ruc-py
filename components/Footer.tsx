@@ -4,7 +4,7 @@ import Wave from './Wave'
 const Footer: React.FC = () => {
   const year = new Date().getFullYear()
   return (
-    <footer className='w-full text-center pb-32 h-24 relative z-50'>
+    <footer className='w-full text-center pb-32 h-24 relative z-50 text-xs'>
       <div>
         <a
           href='https://braian-bernatto.github.io/portfolio/'
