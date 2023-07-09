@@ -2,6 +2,7 @@
 
 import RucList from '@/components/RucList'
 import SearchInput from '@/components/SearchInput'
+import Spinner from '@/components/Spinner'
 import { Ruc } from '@/types'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -9,6 +10,7 @@ import { useState } from 'react'
 export default function Home() {
   const [listado, setListado] = useState<Ruc[]>([])
   const [mensaje, setMensaje] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
 
   return (
     <main className='flex flex-col items-center px-5 sm:px-24 text-xs sm:text-base'>
@@ -35,8 +37,14 @@ export default function Home() {
           />
         </svg>
       </h1>
-      <SearchInput setMensaje={setMensaje} setListado={setListado} />
-      {listado.length > 0 ? (
+      <SearchInput
+        setLoading={setLoading}
+        setMensaje={setMensaje}
+        setListado={setListado}
+      />
+      {loading ? (
+        <Spinner />
+      ) : listado.length > 0 ? (
         <RucList listado={listado} />
       ) : (
         <span className='animate-pulse'>

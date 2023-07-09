@@ -2,6 +2,7 @@ import { Ruc, Search } from '@/types'
 import React, { useState } from 'react'
 
 interface Props {
+  setLoading: (estado: boolean) => void
   setMensaje: (dato: string) => void
   setListado: (datos: Ruc[]) => void
 }
@@ -16,7 +17,11 @@ const isNumeric = (str: any) => {
   )
 }
 
-const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
+const SearchInput: React.FC<Props> = ({
+  setLoading,
+  setMensaje,
+  setListado
+}) => {
   const [buscar, setBuscar] = useState<Search>('')
   const [isNumber, setIsNumber] = useState<boolean>(false)
 
@@ -54,6 +59,7 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
       : buscar.toString().replace(/\s+/g, ' ').trim() //quita todos los espacios extras entre palabras y con trim los espacios a los costados
 
     const getRuc = async () => {
+      setLoading(true)
       const url = new URL(
         isNumber
           ? `${process.env.API_ENDPOINT}/ruc/${parametro}`
@@ -63,6 +69,7 @@ const SearchInput: React.FC<Props> = ({ setMensaje, setListado }) => {
       return await fetch(url)
         .then(res => res.json())
         .catch(e => console.log(e))
+        .finally(() => setLoading(false))
     }
 
     const listadoRuc = await getRuc()
