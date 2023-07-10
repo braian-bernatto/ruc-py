@@ -9,6 +9,7 @@ const CopyClipboard: React.FC = () => {
     select!.removeAllRanges()
     select!.addRange(range)
     document.execCommand('copy')
+    select!.removeAllRanges()
     setTimeout(() => {
       setCopy(false)
     }, 3000)
@@ -17,14 +18,14 @@ const CopyClipboard: React.FC = () => {
   const [copy, setCopy] = useState<boolean>(false)
 
   return (
-    <button
+     <button
       type='button'
       onClick={() => {
         selectNode()
         setCopy(true)
       }}
-      className={`absolute z-50 sm:relative bg-white p-2 my-2 rounded-full shadow-md border-2 cursor-pointer transition-all hover:animate-none ${
-        copy ? 'border-2 border-teal-700' : 'border-transparent animate-pulse'
+      className={`btn-clipboard absolute z-50 sm:relative bg-white p-2 my-2 rounded-full shadow-md cursor-pointer transition-all ${
+        copy ? '' : 'border-transparent animate-pulse'
       }`}
     >
       {!copy ? (
@@ -44,9 +45,21 @@ const CopyClipboard: React.FC = () => {
         </svg>
       ) : (
         <>
-          <p className='absolute bg-white rounded-full top-[50%] translate-y-[-50%] right-[110%] px-2 shadow-xl text-teal-700 border'>
+        <svg width="200" height="200" className='border-circle'>
+          <circle
+          cx="100"
+          cy="100"
+          r="23"
+          fillOpacity="0"      
+          strokeWidth="2"
+          className="circle"
+          ></circle>
+        </svg>
+
+          <p className='absolute bg-white rounded-full top-[50%] translate-y-[-50%] right-[112%] px-2 shadow-xl text-teal-700 border'>
             Copiado!
           </p>
+
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
