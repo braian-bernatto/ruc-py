@@ -16,8 +16,13 @@ const CopyClipboard: React.FC = () => {
 
   const [copy, setCopy] = useState<boolean>(false)
   return (
-    <div
-      className={`bg-white p-2 my-2 rounded-full shadow-md border-2 ${
+    <button
+      type='button'
+      onClick={() => {
+        selectNode()
+        setCopy(true)
+      }}
+      className={`bg-white p-2 my-2 rounded-full shadow-md border-2 cursor-pointer transition-all hover:animate-none ${
         copy ? 'border-2 border-teal-700' : 'border-transparent animate-pulse'
       }`}
     >
@@ -29,10 +34,6 @@ const CopyClipboard: React.FC = () => {
           strokeWidth={1.5}
           stroke='currentColor'
           className='w-6 h-6'
-          onClick={() => {
-            selectNode()
-            setCopy(true)
-          }}
         >
           <path
             strokeLinecap='round'
@@ -56,7 +57,7 @@ const CopyClipboard: React.FC = () => {
           />
         </svg>
       )}
-    </div>
+    </button>
   )
 }
 
