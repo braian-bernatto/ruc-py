@@ -56,7 +56,7 @@ const CopyClipboard: React.FC = () => {
           ></circle>
         </svg>
 
-          <p className='absolute bg-white rounded-full top-[50%] translate-y-[-50%] right-[112%] px-2 shadow-xl text-teal-700 border'>
+          <p className='absolute bg-white rounded-full top-[50%] translate-y-[-50%] right-[112%] px-2 shadow-xl text-teal-700 border font-semibold'>
             Copiado!
           </p>
 
