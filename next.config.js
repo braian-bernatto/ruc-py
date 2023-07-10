@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  env: {
-    API_ENDPOINT: 'https://ruc-api.bernatto.xyz'
-  }
-}
+const nextConfig = {}
 
 module.exports = nextConfig

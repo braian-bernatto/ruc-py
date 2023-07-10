@@ -47,6 +47,7 @@ const SearchInput: React.FC<Props> = ({
       | React.KeyboardEvent<HTMLTextAreaElement>
   ) => {
     e.preventDefault()
+    console.log(process.env.NEXT_PUBLIC_API_ENDPOINT)
 
     if (isNumeric(buscar)) {
       setIsNumber(true)
@@ -62,10 +63,9 @@ const SearchInput: React.FC<Props> = ({
       setLoading(true)
       const url = new URL(
         isNumber
-          ? `${process.env.API_ENDPOINT}/ruc/${parametro}`
-          : `${process.env.API_ENDPOINT}/ruc/razon-social/${parametro}`
+          ? `${process.env.NEXT_PUBLIC_API_ENDPOINT}/ruc/${parametro}`
+          : `${process.env.NEXT_PUBLIC_API_ENDPOINT}/ruc/razon-social/${parametro}`
       )
-
       return await fetch(url)
         .then(res => res.json())
         .catch(e => console.log(e))
