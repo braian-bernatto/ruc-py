@@ -91,8 +91,8 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
-  stroke: var(--green-color);
+	transform: translate(-50%,-50%) rotate(180deg);
+  stroke: var(--green-color);  
 }
 
 .circle {
