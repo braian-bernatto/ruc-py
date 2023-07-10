@@ -20,7 +20,7 @@ export default function Home() {
         height={80}
         alt='escudo de paraguay'
       />
-      <h1 className='border shadow rounded px-2 bg-white mb-5 text-center flex justify-center items-center gap-2 py-1'>
+      <h1 className='border shadow rounded px-2 bg-white mb-5 text-center flex justify-center items-center gap-2 py-1 font-bold'>
         RUC
         <svg
           xmlns='http://www.w3.org/2000/svg'
