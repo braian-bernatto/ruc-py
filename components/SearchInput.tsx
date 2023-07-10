@@ -47,7 +47,6 @@ const SearchInput: React.FC<Props> = ({
       | React.KeyboardEvent<HTMLTextAreaElement>
   ) => {
     e.preventDefault()
-    console.log(process.env.NEXT_PUBLIC_API_ENDPOINT)
 
     if (isNumeric(buscar)) {
       setIsNumber(true)
