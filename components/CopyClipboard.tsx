@@ -18,13 +18,13 @@ const CopyClipboard: React.FC = () => {
   const [copy, setCopy] = useState<boolean>(false)
 
   return (
-     <button
+    <button
       type='button'
       onClick={() => {
         selectNode()
         setCopy(true)
       }}
-      className={`btn-clipboard absolute z-50 sm:relative bg-white p-2 my-2 rounded-full shadow-md cursor-pointer transition-all ${
+      className={`absolute z-50 sm:relative bg-white p-2 my-2 rounded-full shadow-md cursor-pointer transition-all ${
         copy ? '' : 'border-transparent animate-pulse'
       }`}
     >
@@ -45,16 +45,16 @@ const CopyClipboard: React.FC = () => {
         </svg>
       ) : (
         <>
-        <svg width="200" height="200" className='border-circle'>
-          <circle
-          cx="100"
-          cy="100"
-          r="23"
-          fillOpacity="0"      
-          strokeWidth="2"
-          className="circle"
-          ></circle>
-        </svg>
+          <svg width='48' height='48' className='border-circle'>
+            <circle
+              cx='24'
+              cy='24'
+              r='23'
+              fillOpacity='0'
+              strokeWidth='2'
+              className='circle'
+            ></circle>
+          </svg>
 
           <p className='absolute bg-white rounded-full top-[50%] translate-y-[-50%] right-[112%] px-2 shadow-xl text-teal-700 border font-semibold'>
             Copiado!
@@ -66,7 +66,7 @@ const CopyClipboard: React.FC = () => {
             viewBox='0 0 24 24'
             strokeWidth={1.5}
             stroke='currentColor'
-            className='w-6 h-6 text-teal-800'
+            className='w-6 h-6 text-teal-700'
           >
             <path
               strokeLinecap='round'

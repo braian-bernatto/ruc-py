@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --primary-color: hsl(215, 16%, 47%);
-  --green-color: #15803d;
+  --green-color: rgb(15 118 110 / 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +29,6 @@ body {
 }
 
 /* Spinner */
-
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -87,12 +86,12 @@ body {
 }
 
 /* Animated border for clipboard button*/
-.border-circle{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%) rotate(180deg);
-  stroke: var(--green-color);  
+.border-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  stroke: var(--green-color);
 }
 
 .circle {
