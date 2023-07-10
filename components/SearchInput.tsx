@@ -97,7 +97,7 @@ const SearchInput: React.FC<Props> = ({
       ></textarea>
 
       <button
-        className={`bg-slate-500 text-white rounded shadow-md px-2 py-2 flex justify-center items-center gap-2 transition-all hover:scale-105`}
+        className={`bg-slate-500 text-white rounded shadow-md px-2 py-2 flex justify-center items-center gap-2 transition-all font-semibold hover:scale-105`}
         type='submit'
       >
         Buscar
