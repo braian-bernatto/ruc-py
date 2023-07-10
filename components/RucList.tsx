@@ -9,7 +9,7 @@ interface Props {
 const RucList: React.FC<Props> = ({ listado }) => {
   return (
     <>
-      <div>
+      <div className='w-full flex sm:justify-center justify-end items-center'>
         <CopyClipboard />
       </div>
       <div className='overflow-x-auto bg-white rounded shadow max-w-2xl w-full max-h-[400px] sm:max-h-[700px]'>
