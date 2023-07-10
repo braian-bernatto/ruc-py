@@ -89,7 +89,7 @@ const SearchInput: React.FC<Props> = ({
       className='flex flex-wrap items-center justify-center gap-2 mb-4 w-full'
     >
       <textarea
-        className='textarea textarea-xs textarea-bordered w-full sm:w-[400px]'
+        className='textarea textarea-xs textarea-bordered w-full border-4 sm:w-[400px]'
         placeholder='Ingresa el listado de ruc separados por comas'
         onChange={e => handleInputChange(e)}
         value={buscar}
