@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sobre este proyecto
 
-## Getting Started
+Web app para consultar datos sobre `contribuyentes` registrados en la `SET`[^1] del Paraguay.
 
-First, run the development server:
+[^1]: [Subsecretaría de Estado de Tributación](https://www.set.gov.py/web/portal-institucional/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Link 🚀
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Puedes ver el proyecto en este link [www.ruc.bernatto.com](https://ruc.bernatto.com)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Herramientas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Este proyecto está hecho con [Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org) + [TailwindCSS](https://tailwindcss.com) + [DaisyUI](https://daisyui.com)
 
-## Learn More
+## Manual
 
-To learn more about Next.js, take a look at the following resources:
+> 1. Ingresar en el cuadro de texto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- RUC sin `DV`[^2] → ❌`12345-6` → ✅`12345`
+  [^2]: Dígito Verificador
+- Múltiples RUC separados por comas `,` → `12345, 54321, 678910`
+- Nombre o Apellido del contribuyente → `primerApellido segundoApellido` o `primerNombre segundoNombre`
+- Múltiples Nombres o Apellidos separados por comas `,` → `apellidoContribuyente1, apellidoContribuyente2, nombreContribuyente3`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+> 2. Dar Click al botón **Buscar 🔍**
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> 3. [Opcional] Click en el botón **Copiar al Portapeles📋**
