@@ -86,7 +86,7 @@ const SearchInput: React.FC<Props> = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className='flex flex-wrap items-center justify-center gap-2 mb-4 w-full'
+      className='flex flex-wrap items-center justify-center gap-2 mb-4 sm:mb-2 w-full'
     >
       <textarea
         className='textarea textarea-xs textarea-bordered w-full border-4 sm:w-[400px]'

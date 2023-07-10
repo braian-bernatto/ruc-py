@@ -23,7 +23,7 @@ const CopyClipboard: React.FC = () => {
         selectNode()
         setCopy(true)
       }}
-      className={`relative bg-white p-2 my-2 rounded-full shadow-md border-2 cursor-pointer transition-all hover:animate-none ${
+      className={`absolute z-50 sm:relative bg-white p-2 my-2 rounded-full shadow-md border-2 cursor-pointer transition-all hover:animate-none ${
         copy ? 'border-2 border-teal-700' : 'border-transparent animate-pulse'
       }`}
     >
