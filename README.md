@@ -18,7 +18,7 @@ Este proyecto está hecho con [Next.js](https://nextjs.org/) + [TypeScript](http
 
 - RUC sin `DV`[^2] → ❌`12345-6` → ✅`12345`
   [^2]: Dígito Verificador
-- Múltiples RUC separados por comas `,` → `12345, 54321, 678910`
+- Múltiples RUC separados por `espacios` o comas `,` → `12345, 54321, 678910` → `12345 54321 678910`
 - Nombre o Apellido del contribuyente → `primerApellido segundoApellido` o `primerNombre segundoNombre`
 - Múltiples Nombres o Apellidos separados por comas `,` → `apellidoContribuyente1, apellidoContribuyente2, nombreContribuyente3`
 

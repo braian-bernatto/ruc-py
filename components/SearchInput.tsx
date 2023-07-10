@@ -55,7 +55,7 @@ const SearchInput: React.FC<Props> = ({
     }
 
     const parametro = isNumber
-      ? buscar.toString().replace(/\s/g, ';') //reemplaza todos los espacios en blanco por un punto y coma dejando "23424;23424"
+      ? buscar.toString().replaceAll(',', '').replace(/\s/g, ';') //reemplaza todos los espacios en blanco por un punto y coma dejando "23424;23424"
       : buscar.toString().replaceAll(/\s+/g, ' ').replaceAll(',', ';').trim() //quita todos los espacios extras entre palabras y con trim los espacios a los costados
 
     const getRuc = async () => {
