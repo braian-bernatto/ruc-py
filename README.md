@@ -22,6 +22,6 @@ Este proyecto está hecho con [Next.js](https://nextjs.org/) + [TypeScript](http
 - Nombre o Apellido del contribuyente → `primerApellido segundoApellido` → `primerNombre segundoNombre`
 - Múltiples Nombres o Apellidos separados por comas `,` → `apellidoContribuyente1, apellidoContribuyente2, nombreContribuyente3`
 
-> 2. Click al botón **Buscar 🔍** para ver los resultados
+> 2. Click en el botón **Buscar 🔍** para ver los resultados
 
 > 3. [Opcional] Click en el botón **Copiar al Portapeles📋**
