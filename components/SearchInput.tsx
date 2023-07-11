@@ -100,11 +100,11 @@ const SearchInput: React.FC<Props> = ({
       ></textarea>
 
       <button
-        className={`bg-slate-500 text-white rounded shadow-md px-2 py-2 flex justify-center items-center gap-2 transition-all font-semibold hover:scale-105`}
+        className={`bg-slate-500 text-white rounded-md shadow-md px-4 py-2 flex justify-center items-center gap-2 transition-all font-semibold hover:scale-105 text-base`}
         type='submit'
       >
         Buscar
-        <span
+        {/* <span
           className={`transition ${
             typeof buscar === 'string' && buscar!.length > 0
               ? 'animate-pulse contrast-200'
@@ -125,7 +125,7 @@ const SearchInput: React.FC<Props> = ({
               d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
             />
           </svg>
-        </span>
+        </span> */}
       </button>
     </form>
   )
