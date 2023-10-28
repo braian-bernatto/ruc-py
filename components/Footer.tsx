@@ -9,8 +9,7 @@ const Footer: React.FC = () => {
         <a
           href='https://braian-bernatto.github.io/portfolio/'
           target='_blank'
-          className='font-bold hover:underline'
-        >
+          className='font-bold hover:underline'>
           Bernatto Inc.
         </a>{' '}
         | Todos los derechos reservados &copy; {year}
